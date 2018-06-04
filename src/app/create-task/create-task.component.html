@@ -1,0 +1,69 @@
+<mat-card class="card newTask">
+    <mat-card-header>
+        <mat-card-title>Add a new Task</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="box">
+            <mat-form-field>
+                <input matInput #taskTitle type="text" placeholder="Title">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <textarea matInput #taskDescription type="text" placeholder="Summary"></textarea>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <textarea matInput #taskComments type="text" placeholder="Comments"></textarea>
+            </mat-form-field>
+            <br>
+            <div class="row">
+                <div class="col-3-sm">
+                    <mat-form-field>
+                        <mat-select #taskPriority placeholder="Priority">
+                            <mat-option value="1">1 (High)</mat-option>
+                            <mat-option value="2">2 (Medium)</mat-option>
+                            <mat-option value="3">3 (Low)</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-3-sm">
+                    <mat-form-field>
+                        <input matInput #taskDueDate type="text" placeholder="Due Date">
+                    </mat-form-field>
+                </div>  
+
+                <div class="col-3-sm">
+                    <mat-form-field>
+                        <mat-select #taskCategory placeholder="Category">
+                            <mat-option value="Work">Work</mat-option>
+                            <mat-option value="Personal">Personal</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>    
+
+                <div class="col-3-sm">
+                    <mat-form-field>
+                        <mat-select #taskProgress placeholder="Progress">
+                            <mat-option value="To Do">To Do</mat-option>
+                            <mat-option value="In Progress">In Progress</mat-option>
+                            <mat-option value="Complete">Complete</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>    
+            </div>
+            <button mat-raised-button 
+                (click)="add(
+                    taskTitle.value, 
+                    taskPriority.value, 
+                    taskDescription.value, 
+                    taskCategory.value, 
+                    taskDueDate.value, 
+                    taskComments.value, 
+                    taskProgress.value
+                    );" 
+                color="primary"
+                routerLink="/task-board">Add Task</button>
+        </div>
+    </mat-card-content>
+</mat-card>

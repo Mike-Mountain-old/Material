@@ -8,11 +8,27 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppNavigationComponent } from './app-navigation/app-navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatGridListModule, MatMenuModule } from '@angular/material';
+import { 
+  MatToolbarModule, 
+  MatButtonModule, 
+  MatSidenavModule, 
+  MatIconModule, 
+  MatListModule, 
+  MatCardModule, 
+  MatGridListModule, 
+  MatMenuModule, 
+  MatFormFieldModule,
+  MatFormFieldControl,
+  MatInputModule, 
+  MatDividerModule,
+  MatSelectModule,
+  MatDatepickerModule,
+} from '@angular/material';
 import { TaskBoardComponent } from './task-board/task-board.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskInfoService } from './task-info.service';
 import { AppDashboardComponent } from './app-dashboard/app-dashboard.component';
+import { CreateTaskComponent } from './create-task/create-task.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +37,8 @@ import { AppDashboardComponent } from './app-dashboard/app-dashboard.component';
     TaskBoardComponent,
     TasksComponent,
     AppDashboardComponent,
+    CreateTaskComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -36,7 +54,12 @@ import { AppDashboardComponent } from './app-dashboard/app-dashboard.component';
     MatListModule,
     MatCardModule,
     MatGridListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDividerModule,
+    MatSelectModule,
+    MatDatepickerModule,
   ],
   providers: [TaskInfoService],
   bootstrap: [AppComponent]
