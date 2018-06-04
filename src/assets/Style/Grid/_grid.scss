@@ -17,7 +17,7 @@
   }
   
   .hidden-sm {
-    display: none !important;
+    display: none;
   }
   
   // grid
@@ -51,6 +51,7 @@
   .row [class^="col"] {
     float: left;
     margin: 0.5rem 2%;
+    // margin: 0.5rem 0 0 0;
     min-height: 0.125rem;
   }
   

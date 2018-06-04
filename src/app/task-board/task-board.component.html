@@ -1,5 +1,5 @@
 <div class="taskBoardHeader center">
-  <div class="row">
+  <div class="row task-container">
     <div class="col-4-sm">
       <mat-card class="title ToDo card">To Do</mat-card>
     </div>
@@ -10,20 +10,29 @@
       <mat-card class="title Complete card">Complete</mat-card>
     </div>
   </div>
-  <div class="row">
+  <div class="row task-container">
     <div class="col-4-sm">
       <mat-card class="task ToDo card">
-        <p>tasks go here</p>
+        <div *ngIf="taskToDo && taskToDo.length > 0; else noTask">
+          <app-tasks [tasks]=taskToDo></app-tasks>
+        </div>        
+        <ng-template #noTask><h3 class="has-text-centered no-tasks">No Tasks to display</h3></ng-template>
       </mat-card>
     </div>
     <div class="col-4-sm">
       <mat-card class="taskIn Progress card">
-        <p>tasks go here</p>
+        <div *ngIf="taskInProgress && taskInProgress.length > 0; else noTask">
+          <app-tasks [tasks]=taskInProgress></app-tasks>
+        </div>        
+        <ng-template #noTask><h3 class="has-text-centered no-tasks">No Tasks to display</h3></ng-template>
       </mat-card>
     </div>
     <div class="col-4-sm">
       <mat-card class="task Complete card">
-        <p>tasks go here</p>
+        <div *ngIf="taskComplete && taskComplete.length > 0; else noTask">
+          <app-tasks [tasks]=taskComplete></app-tasks>
+        </div>        
+        <ng-template #noTask><h3 class="has-text-centered no-tasks">No Tasks to display</h3></ng-template>
       </mat-card>
     </div>
   </div>

@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,16 +10,21 @@ import { AppNavigationComponent } from './app-navigation/app-navigation.componen
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatGridListModule } from '@angular/material';
 import { TaskBoardComponent } from './task-board/task-board.component';
+import { TasksComponent } from './tasks/tasks.component';
+import { TaskInfoService } from './task-info.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppNavigationComponent,
     TaskBoardComponent,
+    TasksComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     LayoutModule,
     MatToolbarModule,
@@ -28,7 +35,7 @@ import { TaskBoardComponent } from './task-board/task-board.component';
     MatCardModule,
     MatGridListModule
   ],
-  providers: [],
+  providers: [TaskInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
