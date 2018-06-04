@@ -8,10 +8,11 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppNavigationComponent } from './app-navigation/app-navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatGridListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatGridListModule, MatMenuModule } from '@angular/material';
 import { TaskBoardComponent } from './task-board/task-board.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskInfoService } from './task-info.service';
+import { AppDashboardComponent } from './app-dashboard/app-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { TaskInfoService } from './task-info.service';
     AppNavigationComponent,
     TaskBoardComponent,
     TasksComponent,
+    AppDashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { TaskInfoService } from './task-info.service';
     MatIconModule,
     MatListModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatMenuModule
   ],
   providers: [TaskInfoService],
   bootstrap: [AppComponent]
