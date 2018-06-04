@@ -1,0 +1,21 @@
+.card {
+    margin: 10px 20px 10px 20px;
+    flex-grow: 1;
+}
+
+.taskBoardHeader {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.taskBoardBody {
+    display: flex;
+}
+
+.title {
+    flex-basis: 27%;
+}
+
+.task {
+    flex-basis: 30%;
+}
