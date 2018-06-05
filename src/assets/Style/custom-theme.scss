@@ -1,0 +1,14 @@
+@import '~@angular/material/theming';
+@import 'partials/variables';
+
+@include mat-core();
+
+@import 'partials/custom-dark-theme';
+
+@import 'partials/custom-light-theme';
+
+.custom-light-theme {
+    @include angular-material-theme($custom-light-theme);
+}
+// include the custom theme object into the angular material theme
+@include angular-material-theme($custom-theme);

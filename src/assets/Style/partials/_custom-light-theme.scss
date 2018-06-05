@@ -1,0 +1,53 @@
+@import 'light-theme';
+
+// custom background and foreground palettes
+$my-light-theme-background: (
+  status-bar: $custom-blue,
+  app-bar:    map_get($custom-blue, 800),
+  background: map_get($custom-blue, A100),
+  hover:      rgba(white, 0.04), 
+  card:       map_get($custom-blue, A200),
+  dialog:     map_get($custom-blue, A100),
+  disabled-button: $white-12-opacity,
+  raised-button: map-get($custom-orange, 600),
+  focused-button: $white-6-opacity,
+  selected-button: map_get($custom-orange, 900),
+  selected-disabled-button: map_get($mat-grey, 800),
+  disabled-button-toggle: black,
+  unselected-chip: map_get($mat-grey, 700),
+  disabled-list-option: black,
+);
+
+$my-light-theme-foreground: (
+  base:              white,
+  divider:           $black-12-opacity,
+  dividers:          $black-12-opacity,
+  disabled:          rgba(white, 0.3),
+  disabled-button:   rgba(white, 0.3),
+  disabled-text:     rgba(white, 0.3),
+  hint-text:         rgba(white, 0.3),
+  secondary-text:    map_get($custom-orange, 800),
+  icon:              white,
+  icons:             white,
+  text:              map_get($custom-orange, 600),
+  slider-min:        white,
+  slider-off:        rgba(white, 0.3),
+  slider-off-active: rgba(white, 0.3),
+);
+
+// instead of creating a theme with mat-light-theme like a sane person, we will create our own theme-creating function that lets us apply our own foreground and background palettes.
+@function customLightTheme($primary, $accent, $warn: mat-palette($mat-red)) {
+  @return (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    foreground: $my-light-theme-foreground,
+    background: $my-light-theme-background,
+  );
+}
+
+$custom-theme-primary: mat-palette($custom-blue);
+$custom-theme-accent:  mat-palette($custom-orange);
+
+// include the custom theme components into a theme object
+$custom-light-theme: customLightTheme($custom-theme-primary, $custom-theme-accent);

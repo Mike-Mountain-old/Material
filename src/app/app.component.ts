@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  lightTheme: boolean = false; 
+
+  changeTheme() {
+    if (this.lightTheme === false) {
+      this.lightTheme = true;
+    } else {
+      this.lightTheme = false;
+    }
+  }
+  
 }

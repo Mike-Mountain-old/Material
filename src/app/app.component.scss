@@ -1,0 +1,16 @@
+@import '../assets/Style/partials/variables';
+
+.theme-toggle {
+    float: right; 
+    margin-right: 20px;
+    border: 0px solid black;
+    position: relative;
+    margin-bottom: -45px;
+    padding-top: 20px;
+    z-index: 99999999999 !important;
+    color: $accent;
+}
+
+.page {
+    height: 100%;
+}

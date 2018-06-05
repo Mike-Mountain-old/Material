@@ -1,1 +1,6 @@
-<app-navigation></app-navigation>
+<div class="page" [class.custom-light-theme] = "lightTheme === true">
+    <div class="theme-toggle">
+        <mat-slide-toggle (click)="changeTheme()" color="accent">Change theme</mat-slide-toggle>
+    </div>
+    <app-navigation></app-navigation>
+</div>

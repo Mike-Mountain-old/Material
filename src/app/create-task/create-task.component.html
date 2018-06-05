@@ -52,7 +52,7 @@
                     </mat-form-field>
                 </div>    
             </div>
-            <button mat-raised-button 
+            <button mat-stroked-button 
                 (click)="add(
                     taskTitle.value, 
                     taskPriority.value, 
@@ -62,7 +62,7 @@
                     taskComments.value, 
                     taskProgress.value
                     );" 
-                color="primary"
+                color="warn"
                 routerLink="/task-board">Add Task</button>
         </div>
     </mat-card-content>
