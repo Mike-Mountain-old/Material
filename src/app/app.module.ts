@@ -25,11 +25,13 @@ import {
   MatDatepickerModule,
   MatProgressSpinnerModule,
   MatSlideToggleModule,
+  MatExpansionModule,
 } from '@angular/material';
 import { TaskBoardComponent } from './task-board/task-board.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskInfoService } from './task-info.service';
 import { CreateTaskComponent } from './create-task/create-task.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { CreateTaskComponent } from './create-task/create-task.component';
     TaskBoardComponent,
     TasksComponent,
     CreateTaskComponent,
+    DashboardComponent,
     
   ],
   imports: [
@@ -62,6 +65,7 @@ import { CreateTaskComponent } from './create-task/create-task.component';
     MatDatepickerModule,
     MatProgressSpinnerModule,
     MatSlideToggleModule,
+    MatExpansionModule,
   ],
   providers: [TaskInfoService],
   bootstrap: [AppComponent]

@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <mat-card>
+        <mat-card-title>
+          High Priority Tasks
+        </mat-card-title>
+        <mat-card-content>
+          <p>No tasks to display</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-6">
+      <mat-card>
+        <mat-card-title>
+          Recent Tasks
+        </mat-card-title>
+        <mat-card-content>
+          <p>No tasks to display</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <mat-card>
+        <mat-card-title>
+          Quick look
+        </mat-card-title>
+        <mat-card-content>
+          <ng-container *ngFor="let task of tasks">
+              <mat-expansion-panel>
+                <mat-expansion-panel-header class="expansion-header">
+                  <mat-panel-title>
+                    {{ task.title }}
+                  </mat-panel-title>
+                    <div class="progress">{{ task.progress }}</div>
+                </mat-expansion-panel-header>
+
+                <ng-template matExpansionPanelContent>
+                  <h3>Description:</h3>
+                  {{ task.description }}
+                </ng-template>
+
+                <mat-action-row>
+                  <button mat-stroked-button color="warn">Delete</button>
+                  <button mat-stroked-button color="warn">Open</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+          </ng-container>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
+<div class="dash-space"></div>
