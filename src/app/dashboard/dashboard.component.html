@@ -29,7 +29,7 @@
           Quick look
         </mat-card-title>
         <mat-card-content>
-          <mat-tab-group class="task-tab-group">
+          <mat-tab-group class="task-tab-group" [dynamicHeight]="true">
             <mat-tab label="To Do">
               <ng-container *ngIf="taskToDo && taskToDo.length > 0; else noTasks">
                 <ng-container *ngFor="let task of taskToDo">
@@ -44,12 +44,10 @@
                     <ng-template matExpansionPanelContent>
                       <h3>Description:</h3>
                       {{ task.description }}
-                    </ng-template>
-
-                    <mat-action-row>
+                      <mat-divider [inset]="true"></mat-divider>
                       <button mat-stroked-button color="warn">Delete</button>
                       <button mat-stroked-button color="warn">Open</button>
-                    </mat-action-row>
+                    </ng-template>
                   </mat-expansion-panel>
                 </ng-container>
               </ng-container>
@@ -68,12 +66,10 @@
                     <ng-template matExpansionPanelContent>
                       <h3>Description:</h3>
                       {{ task.description }}
-                    </ng-template>
-
-                    <mat-action-row>
+                      <mat-divider [inset]="true"></mat-divider>
                       <button mat-stroked-button color="warn">Delete</button>
                       <button mat-stroked-button color="warn">Open</button>
-                    </mat-action-row>
+                    </ng-template>
                   </mat-expansion-panel>
                 </ng-container>
               </ng-container>
@@ -92,12 +88,10 @@
                     <ng-template matExpansionPanelContent>
                       <h3>Description:</h3>
                       {{ task.description }}
-                    </ng-template>
-
-                    <mat-action-row>
+                      <mat-divider [inset]="true"></mat-divider>
                       <button mat-stroked-button color="warn">Delete</button>
                       <button mat-stroked-button color="warn">Open</button>
-                    </mat-action-row>
+                    </ng-template>
                   </mat-expansion-panel>
                 </ng-container>
               </ng-container>

@@ -29,12 +29,12 @@ import {
   MatTabsModule,
   MatNativeDateModule,
 } from '@angular/material';
-// import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { TaskBoardComponent } from './task-board/task-board.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskInfoService } from './task-info.service';
 import { CreateTaskComponent } from './create-task/create-task.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SingleTaskComponent } from './single-task/single-task.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +44,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     TasksComponent,
     CreateTaskComponent,
     DashboardComponent,
+    SingleTaskComponent,
     
   ],
   imports: [
@@ -70,7 +71,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatSlideToggleModule,
     MatExpansionModule,
     MatTabsModule,
-    // MatMomentDateModule,
     MatNativeDateModule
   ],
   providers: [TaskInfoService],
