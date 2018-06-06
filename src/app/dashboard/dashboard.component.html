@@ -29,26 +29,80 @@
           Quick look
         </mat-card-title>
         <mat-card-content>
-          <ng-container *ngFor="let task of tasks">
-              <mat-expansion-panel>
-                <mat-expansion-panel-header class="expansion-header">
-                  <mat-panel-title>
-                    {{ task.title }}
-                  </mat-panel-title>
-                    <div class="progress">{{ task.progress }}</div>
-                </mat-expansion-panel-header>
+          <mat-tab-group class="task-tab-group">
+            <mat-tab label="To Do">
+              <ng-container *ngIf="taskToDo && taskToDo.length > 0; else noTasks">
+                <ng-container *ngFor="let task of taskToDo">
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header class="expansion-header">
+                      <mat-panel-title>
+                        {{ task.title }}
+                      </mat-panel-title>
+                        <div class="progress">{{ task.progress }}</div>
+                    </mat-expansion-panel-header>
 
-                <ng-template matExpansionPanelContent>
-                  <h3>Description:</h3>
-                  {{ task.description }}
-                </ng-template>
+                    <ng-template matExpansionPanelContent>
+                      <h3>Description:</h3>
+                      {{ task.description }}
+                    </ng-template>
 
-                <mat-action-row>
-                  <button mat-stroked-button color="warn">Delete</button>
-                  <button mat-stroked-button color="warn">Open</button>
-                </mat-action-row>
-              </mat-expansion-panel>
-          </ng-container>
+                    <mat-action-row>
+                      <button mat-stroked-button color="warn">Delete</button>
+                      <button mat-stroked-button color="warn">Open</button>
+                    </mat-action-row>
+                  </mat-expansion-panel>
+                </ng-container>
+              </ng-container>
+            </mat-tab>
+            <mat-tab label="In Progress">
+              <ng-container *ngIf="taskInProgress && taskInProgress.length > 0; else noTasks">
+                <ng-container *ngFor="let task of taskInProgress">
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header class="expansion-header">
+                      <mat-panel-title>
+                        {{ task.title }}
+                      </mat-panel-title>
+                        <div class="progress">{{ task.progress }}</div>
+                    </mat-expansion-panel-header>
+
+                    <ng-template matExpansionPanelContent>
+                      <h3>Description:</h3>
+                      {{ task.description }}
+                    </ng-template>
+
+                    <mat-action-row>
+                      <button mat-stroked-button color="warn">Delete</button>
+                      <button mat-stroked-button color="warn">Open</button>
+                    </mat-action-row>
+                  </mat-expansion-panel>
+                </ng-container>
+              </ng-container>
+            </mat-tab> 
+            <mat-tab label="Complete">
+              <ng-container *ngIf="taskComplete && taskComplete.length > 0; else noTasks">
+                <ng-container *ngFor="let task of taskComplete">
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header class="expansion-header">
+                      <mat-panel-title>
+                        {{ task.title }}
+                      </mat-panel-title>
+                        <div class="progress">{{ task.progress }}</div>
+                    </mat-expansion-panel-header>
+
+                    <ng-template matExpansionPanelContent>
+                      <h3>Description:</h3>
+                      {{ task.description }}
+                    </ng-template>
+
+                    <mat-action-row>
+                      <button mat-stroked-button color="warn">Delete</button>
+                      <button mat-stroked-button color="warn">Open</button>
+                    </mat-action-row>
+                  </mat-expansion-panel>
+                </ng-container>
+              </ng-container>
+            </mat-tab>     
+          </mat-tab-group>
         </mat-card-content>
       </mat-card>
     </div>
@@ -56,3 +110,6 @@
   </div>
 </div>
 <div class="dash-space"></div>
+<ng-template #noTasks>
+  <p>No tasks to display</p>
+</ng-template>

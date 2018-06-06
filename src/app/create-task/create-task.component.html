@@ -28,9 +28,15 @@
                 </div>
                 
                 <div class="col-3-sm">
-                    <mat-form-field>
+                    <!-- <mat-form-field>
                         <input matInput #taskDueDate type="text" placeholder="Due Date">
+                    </mat-form-field> -->
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="myDatepicker">
+                        <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+                        <mat-datepicker #myDatepicker></mat-datepicker>
                     </mat-form-field>
+                          
                 </div>  
 
                 <div class="col-3-sm">
@@ -44,7 +50,7 @@
 
                 <div class="col-3-sm">
                     <mat-form-field>
-                        <mat-select #taskProgress placeholder="Progress">
+                        <mat-select #taskProgress value="To Do">
                             <mat-option value="To Do">To Do</mat-option>
                             <mat-option value="In Progress">In Progress</mat-option>
                             <mat-option value="Complete">Complete</mat-option>

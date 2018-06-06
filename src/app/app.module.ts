@@ -26,7 +26,10 @@ import {
   MatProgressSpinnerModule,
   MatSlideToggleModule,
   MatExpansionModule,
+  MatTabsModule,
+  MatNativeDateModule,
 } from '@angular/material';
+// import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { TaskBoardComponent } from './task-board/task-board.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskInfoService } from './task-info.service';
@@ -66,6 +69,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatProgressSpinnerModule,
     MatSlideToggleModule,
     MatExpansionModule,
+    MatTabsModule,
+    // MatMomentDateModule,
+    MatNativeDateModule
   ],
   providers: [TaskInfoService],
   bootstrap: [AppComponent]
