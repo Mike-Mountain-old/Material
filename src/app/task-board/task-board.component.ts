@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
 import { Task } from '../task-template';
 import { TaskInfoService } from '../task-info.service';
@@ -16,7 +16,9 @@ export class TaskBoardComponent implements OnInit {
   taskInProgress: Task[] = [];
   taskComplete: Task[] = [];
 
-  constructor(private taskInfoService: TaskInfoService) { }
+  constructor(
+    private taskInfoService: TaskInfoService
+  ) { }
 
   ngOnInit() {
     this.fetchTasks();

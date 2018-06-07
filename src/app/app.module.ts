@@ -28,9 +28,10 @@ import {
   MatExpansionModule,
   MatTabsModule,
   MatNativeDateModule,
+  MatDialogModule,
 } from '@angular/material';
 import { TaskBoardComponent } from './task-board/task-board.component';
-import { TasksComponent } from './tasks/tasks.component';
+import { TasksComponent, taskDialogComponent } from './tasks/tasks.component';
 import { TaskInfoService } from './task-info.service';
 import { CreateTaskComponent } from './create-task/create-task.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -45,7 +46,7 @@ import { SingleTaskComponent } from './single-task/single-task.component';
     CreateTaskComponent,
     DashboardComponent,
     SingleTaskComponent,
-    
+    taskDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -71,9 +72,11 @@ import { SingleTaskComponent } from './single-task/single-task.component';
     MatSlideToggleModule,
     MatExpansionModule,
     MatTabsModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatDialogModule,
   ],
   providers: [TaskInfoService],
+  entryComponents: [taskDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
