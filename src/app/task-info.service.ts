@@ -49,7 +49,7 @@ export class TaskInfoService {
   updateTask (task: Task, id: string): Observable<any> {
     const tasksUpdateUrl = `${this.tasksUrl}/${id}`;
     return this.http.put(tasksUpdateUrl, task, httpOptions).pipe(
-      tap(_ => this.log(`Updated task id=${task.id}`)),
+      tap(_ => console.log(`Updated task id=${task.id}`)),
       catchError(this.handleError<any>('updatedTask'))
     );
   }

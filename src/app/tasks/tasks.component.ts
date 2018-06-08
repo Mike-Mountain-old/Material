@@ -39,11 +39,11 @@ export class TasksComponent implements OnInit {
     this.taskInfoService.deleteTask(task).subscribe();
   } 
 
-  openDialog(): void {
+  openDialog(singleTask): void {
     let dialogRef = this.dialog.open(taskDialogComponent, {
-      width: '250px',
+      width: '50%',
       data: {
-        task: this.selectedTask
+        task: singleTask
       }
     });
 
@@ -56,17 +56,25 @@ export class TasksComponent implements OnInit {
 
 @Component({
   selector: 'task-dialog',    
-  templateUrl: './dialog.component.html'
+  templateUrl: './dialog.component.html',
+  styles: ['.mat-form-field {display: block !important;}']
   })
   export class taskDialogComponent {
 
     constructor(
       public dialogRef: MatDialogRef<taskDialogComponent>,
-      @Inject(MAT_DIALOG_DATA) public data: any
+      @Inject(MAT_DIALOG_DATA) public data: any,
+      private taskInfoService: TaskInfoService
     ) { }
 
     onNoClick(): void {
       this.dialogRef.close();
+    }
+
+    save() {
+      console.log('The task is being saved');
+      this.taskInfoService.updateTask(this.data.task, this.data.task.id)
+        .subscribe(() => this.onNoClick());
     }
 
   }

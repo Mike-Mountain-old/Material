@@ -1,0 +1,20 @@
+<ng-container *ngIf="data.task != null; else noTask">
+   <mat-card>
+       <mat-card-header>
+           <mat-card-title>
+               {{data.task.title}}
+           </mat-card-title>
+       </mat-card-header>
+       <mat-card-content>
+           <mat-form-field>
+               <textarea matInput type="textarea" [ngModel]="data.task.description" placeholder="Description"></textarea>
+           </mat-form-field>
+       </mat-card-content>
+       <mat-card-actions>
+            <button mat-stroked-button (click)="save()">Save</button>
+       </mat-card-actions>
+   </mat-card>
+</ng-container>
+<ng-template #noTask>
+    <p>It did NOT work</p>
+</ng-template>

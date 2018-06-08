@@ -1,6 +1,6 @@
 <ul class="tasks">
-  <li *ngFor="let task of tasks; let i = index">
-      <mat-card (click)="onSelect(task)">
+  <li *ngFor="let task of tasks">
+      <mat-card>
         <mat-card-header>
           <mat-card-title>
             {{ task.title }}
@@ -21,7 +21,7 @@
               {{ task.progress }}
             </div>
           </div>
-          <button mat-raised-button (click)="openDialog(i)">Open</button>
+          <button mat-raised-button (click)="openDialog(task)">Open</button>
         </mat-card-content>
       </mat-card>
   </li>
