@@ -1,12 +1,12 @@
 <ul class="tasks">
   <li *ngFor="let task of tasks">
-      <mat-card>
+      <mat-card class="card">
         <mat-card-header>
           <mat-card-title>
             {{ task.title }}
           </mat-card-title>
           <div class="delete">
-            <button mat-mini-fab color="warn" (click)="delete(task)">X</button>
+            <button mat-mini-fab color="warn" (click)="delete(task)" class="del_btn">X</button>
           </div>
         </mat-card-header>
         <mat-card-content>

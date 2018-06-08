@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Task, Goal } from '../App-models/appModels';
+
+import { GoalInfoService } from '../goal-info.service';
 
 @Component({
   selector: 'app-goals',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GoalsComponent implements OnInit {
 
-  constructor() { }
+  @Input() goals: Goal[] = [];
+
+  constructor(private goalInfoService: GoalInfoService) { }
 
   ngOnInit() {
+    console.log("this.goals");
+    console.log(this.goals);
   }
 
 }

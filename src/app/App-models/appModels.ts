@@ -7,4 +7,12 @@ export class Task {
     due_date: string;
     comments: string;
     progress: string;
+    goal: Goal;
+}
+
+export class Goal {
+    id: string;
+    title: string;
+    description: string;
+    tasks: Task;
 }

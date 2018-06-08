@@ -1,0 +1,6 @@
+<ng-container *ngIf="goals; else loading">
+  <app-goals [goals]="goals"></app-goals>
+</ng-container>
+<ng-template #loading>
+  <div>Loading...</div>
+</ng-template>

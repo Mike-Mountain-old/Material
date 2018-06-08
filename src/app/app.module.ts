@@ -36,6 +36,7 @@ import { CreateTaskComponent } from './create-task/create-task.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SingleTaskComponent } from './single-task/single-task.component';
 import { GoalsComponent } from './goals/goals.component';
+import { GoalsDashComponent } from './goals-dash/goals-dash.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { GoalsComponent } from './goals/goals.component';
     DashboardComponent,
     SingleTaskComponent,
     GoalsComponent,
+    GoalsDashComponent,
     
   ],
   imports: [
