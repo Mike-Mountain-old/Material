@@ -29,6 +29,7 @@ import {
   MatTabsModule,
   MatNativeDateModule,
 } from '@angular/material';
+import { DragulaModule } from '../../node_modules/dragula';
 import { TaskBoardComponent } from './task-board/task-board.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskInfoService } from './task-info.service';
@@ -75,7 +76,8 @@ import { GoalsDashComponent } from './goals-dash/goals-dash.component';
     MatSlideToggleModule,
     MatExpansionModule,
     MatTabsModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    DragulaModule,
   ],
   providers: [TaskInfoService],
   bootstrap: [AppComponent]
