@@ -1,6 +1,6 @@
-<div class="goalDashContainer card">
+<div class="goalDashContainer">
   <ng-container *ngFor="let goal of goals">
-    <mat-card>
+    <mat-card class="card goalItem">
       <mat-card-header>
         <mat-card-title>
           {{ goal.title }}
@@ -9,14 +9,14 @@
       <mat-card-content>
         <div class="contentContainer">
           <ng-container *ngFor="let task of goal.tasks">
-            <mat-card class="card goalItem goals-bg">
+            <mat-card class="card taskItem goals-bg">
               <mat-card-header>
                 <mat-card-title>
                   {{ task.title }}
                 </mat-card-title>
               </mat-card-header>
               <mat-card-content>
-                <p>{{ task.description }}</p>
+                <p>{{ task.description.substring(0, 20) }}...</p>
               </mat-card-content>
             </mat-card>
           </ng-container>

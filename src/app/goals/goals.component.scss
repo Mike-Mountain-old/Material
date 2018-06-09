@@ -1,13 +1,22 @@
 .contentContainer {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.taskItem {
+
+    width: 25%;
 }
 
 .goalItem {
-    flex-basis: 25%;
+    flex-basis: 30%;
 }
 
-// .goals-bg {
-//     box-shadow: 0 3px 1px -2px rgba(255,255,255,0.2),0 2px 2px 0 rgba(255,255,255,0.14),0 1px 5px 0 rgba(255,255,255,0.14) !important;
-// }
+.goalDashContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
