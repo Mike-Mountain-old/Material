@@ -17,10 +17,10 @@ export class CreateTaskComponent implements OnInit {
   ngOnInit() {
   }
 
-  add(title: string, priority: number, description: string, category: string, due_date: string, comments: string, progress: string) {
+  add(title: string, priority: number, description: string, category: string, comments: string, progress: string) {
     title = title.trim();
     if (!title) {return;}
-    this.taskInfoService.addTask({title, priority, description, category, due_date, comments, progress} as Task)
+    this.taskInfoService.addTask({title, priority, description, category, comments, progress} as Task)
       .subscribe(task => {
         this.tasks.push(task);
       })
